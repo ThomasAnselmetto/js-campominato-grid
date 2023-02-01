@@ -29,8 +29,20 @@ const buttonStart = document.getElementById("start-game");
 const gridEl = document.getElementById("grid");
 createGrid(gridEl);
 
+let numTotGrid = 100;
+createGrid(numTotGrid);
 
-function createGrid(griglia) {
+// let numTotGrid = 81;
+// let numTotGrid = 49;
+
+function createGrid(griglia, numbers) {
+    //  ho bisogno di un array per inserire i numeri nei div
+
+    let numbersinsquare = [];
+    for (let i = 0; i < 100; i++) {
+        numbersinsquare.push(i + 1);
+        console.log(numbersinsquare[i]);
+    }
 
     // non mi basta il div che ho creato ne devo creare 100
     for (let i = 0; i < 100; i++) {
@@ -38,8 +50,7 @@ function createGrid(griglia) {
         // genero un elemento presumibilmente un div
 
         let quadratoSingolo = document.createElement("div");
-        console.log(i);
-        console.log(quadratoSingolo);
+
         // gli aggiungo la classe per poterlo vedere a schermo
 
         quadratoSingolo.classList.add("square");
