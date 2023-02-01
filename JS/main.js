@@ -29,10 +29,21 @@ const buttonStart = document.getElementById("start-game");
 const gridEl = document.getElementById("grid");
 createGrid(gridEl);
 
-function createGrid(griglia) {
+
+function createGrid(baluba) {
+
     // genero un elemento presumibilmente un div
 
+
+    let quadratoSingolo = document.createElement("div");
+    console.log(quadratoSingolo);
     // gli aggiungo la classe per poterlo vedere a schermo
+
+    quadratoSingolo.classList.add("square");
+
+    //lo aggiungo alla griglia con append
+
+    baluba.append(quadratoSingolo);
 
 
 
