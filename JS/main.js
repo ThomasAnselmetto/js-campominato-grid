@@ -12,7 +12,24 @@
 * ***************************************************/
 const buttonStart = document.getElementById("start-game");
 
+buttonStart.addEventListener(
+    "click",
+    function () {
+        buttonStart.classList.add("button");
 
+        // creare una funzione che costruisca la griglia creando degli elementi nel HTML
+
+        const gridEl = document.getElementById("grid");
+
+        let numTotGrid = 100;
+        // let numTotGrid = 81;
+        // let numTotGrid = 49;
+
+        createGrid(gridEl, numTotGrid);
+    }
+
+
+)
 
 
 
@@ -21,31 +38,25 @@ const buttonStart = document.getElementById("start-game");
 
 
 /****************************************************
-*                                                   *
-*                       FUNCTION                    *
-*                                                   *    
-* ***************************************************/
-// creare una funzione che costruisca la griglia creando degli elementi nel HTML
-const gridEl = document.getElementById("grid");
-createGrid(gridEl);
+ *                                                   *
+ *                       FUNCTION                    *
+ *                                                   *    
+ * ***************************************************/
 
-let numTotGrid = 100;
-createGrid(numTotGrid);
 
-// let numTotGrid = 81;
-// let numTotGrid = 49;
 
 function createGrid(griglia, numbers) {
     //  ho bisogno di un array per inserire i numeri nei div
 
-    let numbersinsquare = [];
-    for (let i = 0; i < 100; i++) {
-        numbersinsquare.push(i + 1);
-        console.log(numbersinsquare[i]);
-    }
 
+    let numbersinsquare = [];
+    for (let i = 0; i < numbers; i++) {
+        numbersinsquare.push(i + 1);
+        numbersinsquare[i] = document.createElement("h2");
+
+    }
     // non mi basta il div che ho creato ne devo creare 100
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < numbers; i++) {
 
         // genero un elemento presumibilmente un div
 
@@ -55,11 +66,27 @@ function createGrid(griglia, numbers) {
 
         quadratoSingolo.classList.add("square");
 
+        // do la classe active quando clicco
+        // quadratoSingolo
+        quadratoSingolo.addEventListener(
+            "click",
+            function () {
+                this.classList.toggle("active");
+            }
+        )
         //lo aggiungo alla griglia con append
+
 
         griglia.append(quadratoSingolo);
     }
 }
+
+
+
+
+
+
+
 
 
 
