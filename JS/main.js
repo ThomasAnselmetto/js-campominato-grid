@@ -30,28 +30,37 @@ const gridEl = document.getElementById("grid");
 createGrid(gridEl);
 
 
-function createGrid(baluba) {
+function createGrid(griglia) {
 
-    // genero un elemento presumibilmente un div
+    // non mi basta il div che ho creato ne devo creare 100
+    for (let i = 0; i < 100; i++) {
 
+        // genero un elemento presumibilmente un div
 
-    let quadratoSingolo = document.createElement("div");
-    console.log(quadratoSingolo);
-    // gli aggiungo la classe per poterlo vedere a schermo
+        let quadratoSingolo = document.createElement("div");
+        console.log(i);
+        console.log(quadratoSingolo);
+        // gli aggiungo la classe per poterlo vedere a schermo
 
-    quadratoSingolo.classList.add("square");
+        quadratoSingolo.classList.add("square");
 
-    //lo aggiungo alla griglia con append
+        //lo aggiungo alla griglia con append
 
-    baluba.append(quadratoSingolo);
-
-
-
-
-
-
-
+        griglia.append(quadratoSingolo);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
