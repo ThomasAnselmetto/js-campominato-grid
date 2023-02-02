@@ -52,7 +52,6 @@ function createGrid(griglia, numbers) {
     let numbersinsquare = [];
     for (let i = 0; i < numbers; i++) {
         numbersinsquare.push(i + 1);
-        numbersinsquare[i] = document.createElement("h2");
 
     }
     // non mi basta il div che ho creato ne devo creare 100
@@ -61,7 +60,7 @@ function createGrid(griglia, numbers) {
         // genero un elemento presumibilmente un div
 
         let quadratoSingolo = document.createElement("div");
-
+        quadratoSingolo.innerHTML = numbersinsquare[i];
         // gli aggiungo la classe per poterlo vedere a schermo
 
         quadratoSingolo.classList.add("square");
@@ -72,6 +71,7 @@ function createGrid(griglia, numbers) {
             "click",
             function () {
                 this.classList.toggle("active");
+                console.log(this.innerHTML);
             }
         )
         //lo aggiungo alla griglia con append
